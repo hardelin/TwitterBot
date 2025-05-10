@@ -29,6 +29,7 @@ for user in data[ind:]:
         time.sleep(2)
         login_field.send_keys(user['username'])
     except:
+        lst = open('source/last_acc.txt', "w").write(user['username'])
         driver.quit()
         exit('not available internet connection or username')
     driver.find_element(By.XPATH,
@@ -39,6 +40,7 @@ for user in data[ind:]:
         time.sleep(2)
         password_field.send_keys(user['password'])
     except:
+        lst = open('source/last_acc.txt', "w").write(user['username'])
         exit('not available internet connection or password')
     driver.find_element(By.XPATH,
                         "//button[@class='css-175oi2r r-sdzlij r-1phboty r-rs99b7 r-lrvibr r-19yznuf r-64el8z r-1fkl15p r-1loqt21 r-o7ynqc r-6416eg r-1ny4l3l']").click()
