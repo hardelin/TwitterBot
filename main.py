@@ -1,3 +1,5 @@
+from os import system
+system("pip install -r requirement.txt")
 import time
 from libs.selenium import webdriver
 from libs.selenium.webdriver.chrome.service import Service
